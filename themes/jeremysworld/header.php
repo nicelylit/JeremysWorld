@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Jeremys_World
+ * @since Jeremy's World 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -24,13 +24,13 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'jeremysworld' ); ?></a>
 
 	<div id="sidebar" class="sidebar">
 		<header id="masthead" class="site-header">
 			<div class="site-branding">
 				<?php
-					twentyfifteen_the_custom_logo();
+					jeremysworld_the_custom_logo();
 
 				if ( is_front_page() && is_home() ) :
 					?>
@@ -47,7 +47,7 @@
 						<?php
 					endif;
 					?>
-				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
+				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'jeremysworld' ); ?></button>
 			</div><!-- .site-branding -->
 		</header><!-- .site-header -->
 

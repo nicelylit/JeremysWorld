@@ -60,7 +60,7 @@
 			return;
 		}
 
-		button.on( 'click.twentyfifteen', function() {
+		button.on( 'click.jeremysworld', function() {
 			secondary.toggleClass( 'toggled-on' );
 			secondary.trigger( 'resize' );
 			$( this ).toggleClass( 'toggled-on' );
@@ -80,7 +80,7 @@
 	 * Uses jQuery's width() function to determine the size of the window and add
 	 * the default ARIA attributes for the menu toggle if it's visible.
 	 *
-	 * @since Twenty Fifteen 1.1
+	 * @since Jeremy's World 1.0
 	 */
 	function onResizeARIA() {
 		if ( 955 > $window.width() ) {
@@ -117,14 +117,14 @@
 		$sidebar       = $( '#sidebar' ).first();
 
 		$window
-			.on( 'scroll.twentyfifteen', resizeAndScroll )
-			.on( 'load.twentyfifteen', onResizeARIA )
-			.on( 'resize.twentyfifteen', function() {
+			.on( 'scroll.jeremysworld', resizeAndScroll )
+			.on( 'load.jeremysworld', onResizeARIA )
+			.on( 'resize.jeremysworld', function() {
 				clearTimeout( resizeTimer );
 				resizeTimer = setTimeout( resizeAndScroll, 500 );
 				onResizeARIA();
 			} );
-		$sidebar.on( 'click.twentyfifteen keydown.twentyfifteen', 'button', resizeAndScroll );
+		$sidebar.on( 'click.jeremysworld keydown.jeremysworld', 'button', resizeAndScroll );
 
 		for ( var i = 0; i < 6; i++ ) {
 			setTimeout( resizeAndScroll, 100 * i );

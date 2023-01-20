@@ -10,8 +10,8 @@
  * Learn more: {@link https://developer.wordpress.org/themes/basics/template-hierarchy/}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Jeremys_World
+ * @since Jeremy's World 1.0
  */
 
 get_header(); ?>
@@ -45,9 +45,9 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-					'next_text'          => __( 'Next page', 'twentyfifteen' ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+					'prev_text'          => __( 'Previous page', 'jeremysworld' ),
+					'next_text'          => __( 'Next page', 'jeremysworld' ),
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'jeremysworld' ) . ' </span>',
 				)
 			);
 
