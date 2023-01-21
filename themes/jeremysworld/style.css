@@ -485,7 +485,7 @@ input,
 select,
 textarea {
 	background-color: #f7f7f7;
-	border-radius: 0;
+	border-radius: 4px;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -663,9 +663,14 @@ a:focus {
  * 6.2 Menus
  */
 
+.main-navigation {
+	position: relative;
+}
+
 .main-navigation a {
 	display: block;
-	padding: 0.8em 0;
+	font-size: 0.8em;
+	padding: 0.3em 0.6em;
 	position: relative;
 	text-decoration: none;
 }
@@ -673,6 +678,9 @@ a:focus {
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .main-navigation ul ul {
@@ -684,7 +692,13 @@ a:focus {
 	display: block;
 }
 
+.main-navigation ul li {
+	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
+
 .main-navigation li {
+	display: inline-block;
 	border-top: 1px solid #eaeaea;
 	border-top: 1px solid rgba(51, 51, 51, 0.1);
 	position: relative;
@@ -698,6 +712,7 @@ a:focus {
 .main-navigation .nav-menu > ul > li:first-child,
 .main-navigation .nav-menu > li:first-child {
 	border-top: 0;
+	border-bottom: 0;
 }
 
 .main-navigation .menu-item-has-children > a {
@@ -705,6 +720,7 @@ a:focus {
 }
 
 .main-navigation .menu-item-description {
+	display: none;
 	color: #707070;
 	color: rgba(51, 51, 51, 0.7);
 	font-family: "Noto Sans", sans-serif;
@@ -899,6 +915,7 @@ a:focus {
 }
 
 .secondary-toggle {
+	display: none;
 	background-color: transparent;
 	border: 1px solid #eaeaea;
 	border: 1px solid rgba(51, 51, 51, 0.1);
@@ -1298,14 +1315,16 @@ img.aligncenter {
  */
 
 .site-header {
+	display: flex;
+	flex-direction: column;
 	background-color: #fff;
 	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
-	padding: 7.6923%;
+	padding: 3% 7.6923%;
 }
 
 .site-branding {
 	min-height: 2em;
-	padding-right: 60px;
+	padding-right: 0;
 	position: relative;
 }
 
@@ -1328,7 +1347,6 @@ img.aligncenter {
 }
 
 .site-description {
-	display: none;
 	font-family: "Noto Sans", sans-serif;
 	font-size: 12px;
 	font-size: 1.2rem;
@@ -1338,6 +1356,22 @@ img.aligncenter {
 	opacity: 0.7;
 }
 
+.site-navsearch {
+	display: flex;
+	flex-direction: column;
+}
+
+.site-navsearch .widget-area {
+	flex: 1;
+}
+
+.site-navsearch .main-navigation {
+	flex: 2;
+}
+
+.site-navsearch .wp-block-search__inside-wrapper {
+	display: block;
+}
 
 /**
  * 11.0 Widgets
@@ -1389,6 +1423,15 @@ img.aligncenter {
 .widget input[type="search"],
 .widget textarea {
 	padding: 0.375em;
+}
+
+.widget input[type="search"] {
+	padding: 0.5em;
+	font-size: 12px;
+}
+
+.widget.widget_search {
+	margin: 0;
 }
 
 .widget-title {
@@ -1602,7 +1645,7 @@ img.aligncenter {
 }
 
 .widget-area {
-	margin: 9.09090% auto 0;
+	margin: 0.5em 0 2.5em;
 }
 
 .site-footer {
@@ -2769,6 +2812,28 @@ p > video {
 		margin-left: 0;
 	}
 
+	.site-navsearch {
+		flex-direction: row;
+	}
+
+	.site-navsearch .widget-area {
+		flex: 1 50%;
+	}
+
+	.site-navsearch .main-navigation {
+		flex: 2 50%;
+	}
+
+	.site-navsearch .widget input[type="search"] {
+		width: 50%;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+	}
+
+	.site-navsearch .widget input[type="search"]:focus {
+		width: 100%;
+	}
+
 	.site-branding {
 		min-height: 3.2em;
 	}
@@ -2789,15 +2854,6 @@ p > video {
 		padding: 7.6923% 7.6923% 0;
 	}
 
-	.main-navigation {
-		margin-bottom: 11.1111%;
-	}
-
-	.main-navigation ul {
-		border-top: 1px solid rgba(51, 51, 51, 0.1);
-		border-bottom: 1px solid rgba(51, 51, 51, 0.1);
-	}
-
 	.main-navigation ul ul {
 		border-top: 0;
 		border-bottom: 0;
@@ -2812,7 +2868,7 @@ p > video {
 	}
 
 	.widget-area {
-		margin-top: 0;
+		margin: 0.5em 0 0;
 	}
 
 	.widget {
@@ -3022,7 +3078,7 @@ p > video {
 	}
 
 	.main-navigation a {
-		padding: 1em 0;
+		padding: 1em 2em;
 	}
 
 	.main-navigation ul ul {
@@ -3672,7 +3728,7 @@ p > video {
 	}
 
 	.main-navigation a {
-		padding: 0.75em 0;
+		padding: 0.75em 1.5em;
 	}
 
 	.main-navigation .menu-item-description {
@@ -4158,23 +4214,8 @@ p > video {
  */
 
 @media screen and (min-width: 59.6875em) {
-	body:before {
-		background-color: #fff;
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-		content: "";
-		display: block;
-		height: 100%;
-		min-height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 29.4118%;
-		z-index: 0; /* Fixes flashing bug with scrolling on Safari */
-	}
-
 	.site {
 		margin: 0 auto;
-		max-width: 1403px;
 	}
 
 	.sidebar {
@@ -4200,7 +4241,6 @@ p > video {
 	.site-content {
 		display: block;
 		float: left;
-		margin-left: 29.4118%;
 		width: 70.5882%;
 	}
 
@@ -4277,14 +4317,39 @@ p > video {
 		padding: 0.375em;
 	}
 
+	.site-navsearch {
+		flex-direction: column;
+	}
+
+	.site-navsearch .widget-area {
+		width: 100%;
+	}
+
+	.site-navsearch .widget {
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-navsearch .widget input[type="search"] {
+		padding: 0.2em 0.5em;
+		float: right;
+		width: 25%;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+	}
+
+	.site-navsearch .widget input[type="search"]:focus {
+		width: 75%;
+	}
+
 	.main-navigation {
-		font-size: 12px;
-		font-size: 1.2rem;
-		margin: 0 20% 20%;
+		font-size: 14px;
+		font-size: 1.4rem;
+		margin: 0;
 	}
 
 	.main-navigation a {
-		padding: 0.5em 0;
+		padding: 0.5em 1em;
 	}
 
 	.main-navigation .menu-item-has-children > a {
@@ -4430,15 +4495,21 @@ p > video {
 	}
 
 	.site-header {
-		background-color: transparent;
+		flex-direction: row;
+		background-color: white;
 		border-bottom: 0;
-		margin: 20% 0;
-		padding: 0 20%;
+		padding: 2% 10% 2% 15%;
+		column-count: 2;
 	}
 
 	.site-branding {
+		flex: 1 50%;
 		min-height: 0;
 		padding: 0;
+	}
+
+	.site-navsearch {
+		flex: 2 50%;
 	}
 
 	.site-title {
@@ -4458,6 +4529,10 @@ p > video {
 	.site-description {
 		font-size: 12px;
 		font-size: 1.2rem;
+	}
+
+	.widget-area {
+		margin: 0.5em 0 3em;
 	}
 
 	.widget {
@@ -4960,7 +5035,7 @@ p > video {
 	}
 
 	.main-navigation a {
-		padding: 0.4643em 0;
+		padding: 0.4643em 0.9286em;
 	}
 
 	.main-navigation .menu-item-has-children > a {
@@ -5511,7 +5586,7 @@ p > video {
 	}
 
 	.main-navigation a {
-		padding: 0.5em 0;
+		padding: 0.5em 1em;
 	}
 
 	.main-navigation .menu-item-has-children > a {
@@ -5986,10 +6061,6 @@ p > video {
  */
 
 @media screen and (min-width: 87.6875em) {
-	body:before {
-		width: -webkit-calc(50% - 289px);
-		width: calc(50% - 289px);
-	}
 }
 
 

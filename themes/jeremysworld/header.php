@@ -26,7 +26,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'jeremysworld' ); ?></a>
 
-	<div id="sidebar" class="sidebar">
+	<div id="navbar" class="navbar">
 		<header id="masthead" class="site-header">
 			<div class="site-branding">
 				<?php
@@ -49,9 +49,10 @@
 					?>
 				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'jeremysworld' ); ?></button>
 			</div><!-- .site-branding -->
+			<div class="site-navsearch">
+				<?php get_template_part( 'navsearch' ); ?>
+			</div><!-- .site-nav-search -->
 		</header><!-- .site-header -->
-
-		<?php get_sidebar(); ?>
 	</div><!-- .sidebar -->
 
 	<div id="content" class="site-content">
