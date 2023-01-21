@@ -24,11 +24,6 @@ get_header(); ?>
 			 */
 			get_template_part( 'content', get_post_format() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
 			// Previous/next post navigation.
 			the_post_navigation(
 				array(
@@ -40,6 +35,11 @@ get_header(); ?>
 						'<span class="post-title">%title</span>',
 				)
 			);
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
 			// End the loop.
 		endwhile;

@@ -26,26 +26,35 @@
 			?>
 	</header><!-- .entry-header -->
 
+	<nav class="entry-nav">
+		<?php jeremysworld_entry_meta(); ?>
+		<?php edit_post_link( __( 'Edit', 'jeremysworld' ), '<span class="edit-link">', '</span>' ); ?>
+	</nav><!-- .entry-nav -->
+
 	<div class="entry-content">
 		<?php
-			the_content(
-				sprintf(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Continue reading %s', 'jeremysworld' ),
-					the_title( '<span class="screen-reader-text">', '</span>', false )
-				)
-			);
+			if ( is_single() ):
+				the_content(
+					sprintf(
+						/* translators: %s: Post title. Only visible to screen readers. */
+						__( 'Continue reading %s', 'jeremysworld' ),
+						the_title( '<span class="screen-reader-text">', '</span>', false )
+					)
+				);
 
-			wp_link_pages(
-				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jeremysworld' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'jeremysworld' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-				)
-			);
+				wp_link_pages(
+					array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jeremysworld' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'jeremysworld' ) . ' </span>%',
+						'separator'   => '<span class="screen-reader-text">, </span>',
+					)
+				);
+			else:
+				the_excerpt();
+			endif;
 			?>
 	</div><!-- .entry-content -->
 
@@ -55,10 +64,5 @@
 		get_template_part( 'author-bio' );
 		endif;
 	?>
-
-	<footer class="entry-footer">
-		<?php jeremysworld_entry_meta(); ?>
-		<?php edit_post_link( __( 'Edit', 'jeremysworld' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

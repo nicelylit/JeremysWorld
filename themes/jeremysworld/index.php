@@ -16,7 +16,10 @@
 
 get_header(); ?>
 
-	<?php get_sidebar(); ?>
+	<?php if ( ! wp_is_mobile()) :
+		get_sidebar();
+	endif; ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

@@ -18,6 +18,10 @@
 
 get_header(); ?>
 
+	<?php if ( ! wp_is_mobile()) :
+		get_sidebar();
+	endif; ?>
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 

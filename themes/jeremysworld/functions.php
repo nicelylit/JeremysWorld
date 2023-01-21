@@ -448,7 +448,7 @@ function jeremysworld_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '20201026' );
 
 	// Load our main stylesheet.
-	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230121' );
+	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230122' );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'jeremysworld-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'jeremysworld-style' ), '20220914' );
@@ -563,6 +563,18 @@ function jeremysworld_post_nav_background() {
 	wp_add_inline_style( 'jeremysworld-style', $css );
 }
 add_action( 'wp_enqueue_scripts', 'jeremysworld_post_nav_background' );
+
+/**
+ * Display longer excerpt.
+ *
+ * @since Jeremy's World 1.0
+ *
+ * @param int $length The maximum number of words. Default 55.
+ */
+function jeremysworld_excerpt_length($length) {
+	return 200;
+}
+add_filter('excerpt_length', 'jeremysworld_excerpt_length');
 
 /**
  * Display descriptions in main navigation.
