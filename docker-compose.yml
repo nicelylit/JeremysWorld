@@ -35,7 +35,10 @@ services:
       - WORDPRESS_DB_NAME=wordpress
       - WORDPRESS_DEBUG=true
       - WORDPRESS_TABLE_PREFIX=mjm1990_
+      - WORDPRESS_ICP_NUM=true
     volumes:
       - ./themes:/var/www/html/wp-content/themes
+      - ./wp-config.php:/var/www/html/wp-config.php
+      - ./zh_CN.php:/var/www/html/wp-content/languages/zh_CN.php
 volumes:
   db_data:
