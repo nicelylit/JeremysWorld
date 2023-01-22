@@ -1327,6 +1327,7 @@ img.aligncenter {
 	flex-direction: column;
 	background-color: #fff;
 	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
 	padding: 3% 7.6923%;
 }
 
@@ -1659,7 +1660,10 @@ img.aligncenter {
 .site-footer {
 	background-color: #fff;
 	border-top: 1px solid rgba(51, 51, 51, 0.1);
-	padding: 3.84615% 7.6923%;
+	box-shadow: 0 0 1px 1px rgba(51, 51, 51, 0.15);
+	text-align: center;
+	margin: 0;
+	padding: 3% 0;
 }
 
 
@@ -2988,13 +2992,6 @@ p > video {
 		padding: 9.0909%;
 	}
 
-	.site-footer {
-		border-top: 0;
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-		margin: 0 7.6923%;
-		padding: 3.84615% 7.6923%;
-	}
-
 	.pagination {
 		border-top: 0;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
@@ -4241,6 +4238,10 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.421em;
 	}
+
+	.site-footer {
+		padding: 2% 0;
+	}
 }
 
 
@@ -4541,7 +4542,6 @@ p > video {
 	.site-header {
 		flex-direction: row;
 		background-color: white;
-		border-bottom: 0;
 		padding: 2% 10% 2% 15%;
 		column-count: 2;
 	}
@@ -4937,17 +4937,6 @@ p > video {
 
 	.comment-reply-title small a:before {
 		top: -3px;
-	}
-
-	.site-footer {
-		float: left;
-		margin: 0 0 0 35.2941%;
-		padding: 0;
-		width: 58.8235%;
-	}
-
-	.site-info {
-		padding: 5% 10%;
 	}
 
 	embed,
@@ -6230,11 +6219,6 @@ p > video {
 	}
 
 	.page-header {
-		padding: 3.84615% 0;
-	}
-
-	.site-footer {
-		margin-top: 7.6923%;
 		padding: 3.84615% 0;
 	}
 
