@@ -37,6 +37,9 @@
 				)
 			);
 			?>
+		<?php if ( get_the_ID() === 947 && function_exists('simpleYearlyArchive') ) :
+			simpleYearlyArchive();
+		endif; ?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
