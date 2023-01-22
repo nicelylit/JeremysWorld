@@ -320,6 +320,7 @@ img.alignleft {
 .cat-links:before,
 .tags-links:before,
 .comments-link:before,
+.article-views:before,
 .entry-format:before,
 .edit-link:before,
 .full-size-link:before {
@@ -332,6 +333,7 @@ img.alignleft {
 .cat-links,
 .tags-links,
 .comments-link,
+.article-views,
 .entry-format,
 .full-size-link {
 	margin-right: auto;

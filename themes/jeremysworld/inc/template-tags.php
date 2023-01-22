@@ -132,6 +132,12 @@ if ( ! function_exists( 'jeremysworld_entry_meta' ) ) :
 			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'jeremysworld' ), get_the_title() ) );
 			echo '</span>';
 		}
+
+		if (function_exists('the_views')) {
+			echo '<span class="article-views">';
+			the_views();
+			echo '</span>';
+		}
 	}
 endif;
 
