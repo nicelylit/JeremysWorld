@@ -480,6 +480,15 @@ function jeremysworld_scripts() {
 			'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'jeremysworld' ) . '</span>',
 		)
 	);
+
+	if ( is_singular() ) {
+		// Support math formula rendering.
+		wp_enqueue_script( 'MathJAX', 'https://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML');
+
+		// The animation for a particular article.
+		// 滚动硬币的启示
+        wp_enqueue_script( 'coin-path', get_template_directory_uri() . '/js/coin-path.js');
+	}
 }
 add_action( 'wp_enqueue_scripts', 'jeremysworld_scripts' );
 
