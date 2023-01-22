@@ -74,7 +74,7 @@ function jeremysworld_preview() {
 		wp_die(
 			sprintf(
 				/* translators: %s: WordPress version. */
-				__( 'Jeremy's World requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'jeremysworld' ),
+				__( 'Jeremy\'s World requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'jeremysworld' ),
 				$GLOBALS['wp_version']
 			)
 		);
