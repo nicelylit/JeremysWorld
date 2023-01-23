@@ -37,7 +37,7 @@
 				)
 			);
 			?>
-		<?php if ( get_the_ID() === 947 && function_exists('simpleYearlyArchive') ) :
+		<?php if ( (get_the_ID() === 947 || get_the_ID() === 941) && function_exists('simpleYearlyArchive') ) :
 			simpleYearlyArchive();
 		endif; ?>
 	</div><!-- .entry-content -->
