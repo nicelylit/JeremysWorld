@@ -366,7 +366,7 @@ if ( ! function_exists( 'jeremysworld_fonts_url' ) ) :
 	function jeremysworld_fonts_url() {
 		$fonts_url = '';
 		$fonts     = array();
-		$subsets   = 'latin,latin-ext';
+		$subsets   = 'latin,latin-ext,chinese-simplified';
 
 		/*
 		 * translators: If there are characters in your language that are not supported
@@ -448,7 +448,7 @@ function jeremysworld_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '20201026' );
 
 	// Load our main stylesheet.
-	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230122' );
+	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230123' );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'jeremysworld-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'jeremysworld-style' ), '20220914' );
@@ -483,8 +483,10 @@ function jeremysworld_scripts() {
 
 	if ( is_singular() ) {
 		// Support math formula rendering.
-		wp_enqueue_script( 'MathJAX', 'https://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML');
+		wp_enqueue_script( 'MathJAX', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML');
+	}
 
+	if ( is_single( '677' ) ) {
 		// The animation for a particular article.
 		// 滚动硬币的启示
         wp_enqueue_script( 'coin-path', get_template_directory_uri() . '/js/coin-path.js');
@@ -581,7 +583,7 @@ add_action( 'wp_enqueue_scripts', 'jeremysworld_post_nav_background' );
  * @param int $length The maximum number of words. Default 55.
  */
 function jeremysworld_excerpt_length($length) {
-	return 200;
+	return 150;
 }
 add_filter('excerpt_length', 'jeremysworld_excerpt_length');
 
