@@ -1332,12 +1332,15 @@ img.aligncenter {
 }
 
 .custom-logo {
-	max-height: 84px;
+	max-height: 36px;
 	width: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .wp-custom-logo .site-title {
-	margin-top: 0.545454545em;
+	margin-top: 0;
 }
 
 .site-description {
@@ -2922,6 +2925,10 @@ p > video {
 		min-height: 3.2em;
 	}
 
+	.custom-logo {
+		max-height: 50px;
+	}
+
 	.site-content {
 		margin: 0.5em;
 	}
@@ -3261,14 +3268,6 @@ p > video {
 
 	.site-branding {
 		min-height: 3.7059em;
-	}
-
-	.custom-logo {
-		max-height: 105px;
-	}
-
-	.wp-custom-logo .site-title {
-		margin-top: 0.482758621em;
 	}
 
 	.site-description {
@@ -3716,14 +3715,6 @@ p > video {
 
 	.site-branding {
 		min-height: 3.7895em;
-	}
-
-	.custom-logo {
-		max-height: 104px;
-	}
-
-	.wp-custom-logo .site-title {
-		margin-top: 0.5em;
 	}
 
 	.widget {
@@ -4209,14 +4200,6 @@ p > video {
 
 	.site-navsearch {
 		flex: 2 50%;
-	}
-
-	.custom-logo {
-		max-height: none;
-	}
-
-	.wp-custom-logo .site-title {
-		margin-top: 0.545454545em;
 	}
 
 	.site-description {
