@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Jeremy's World 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/jeremysworld\n"
 "POT-Creation-Date: 2016-08-04 23:43+0800\n"
-"PO-Revision-Date: 2023-01-22 17:15+0800\n"
+"PO-Revision-Date: 2023-01-26 15:55+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: inc/template-tags.php:49
 msgid "Featured"
-msgstr ""
+msgstr "置顶"
 
 #: inc/template-tags.php:55
 msgctxt "Used before post format."
