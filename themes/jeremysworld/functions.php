@@ -448,10 +448,10 @@ function jeremysworld_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '20201026' );
 
 	// Load our main stylesheet.
-	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230126' );
+	wp_enqueue_style( 'jeremysworld-style', get_stylesheet_uri(), array(), '20230127' );
 
 	// Theme block stylesheet.
-	wp_enqueue_style( 'jeremysworld-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'jeremysworld-style' ), '20220914' );
+	wp_enqueue_style( 'jeremysworld-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'jeremysworld-style' ), '20230127' );
 
 	// Load the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'jeremysworld-ie', get_template_directory_uri() . '/css/ie.css', array( 'jeremysworld-style' ), '20220908' );

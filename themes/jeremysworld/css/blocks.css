@@ -291,11 +291,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding: 0;
 }
 
-.wp-block-code code {
-	font-family: Inconsolata, monospace;
-	font-size: inherit;
-}
-
 /* Preformatted */
 
 .wp-block-preformatted {
